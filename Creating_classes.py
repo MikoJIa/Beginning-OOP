@@ -97,18 +97,54 @@
 # print(object1.__dict__)
 
 
-class Car:
-    model = 'BMW'
-    engine = 1.6
+# class Car:
+#     model = 'BMW'
+#     engine = 1.6
+#
+#     def drive(self):
+#         print('Lets go')
+#
+#
+# to_add = {
+#     'wheels': 4,
+#     'seats': 4
+# }
+#
+#
+# car1 = Car()
+# getattr(car1, 'drive')()
+# getattr(Car, 'drive')
+# [setattr(Car, *attr) for attr in (['model', 'Honda'], ['engine', 1.8])]
+# [setattr(Car, attr, val) for attr, val in to_add.items()]
+# print(Car.__dict__)
+# print(*[getattr(Car, attr) for attr in ('model', 'engine', 'wheels', 'seats')], sep='\n')
+# [delattr(Car, attr) for attr in ('wheels', 'seats')]
+# print(Car.__dict__)
 
-    def drive(self):
-        print('Lets go')
+
+class Empty:
+    pass
 
 
-print(Car.__dict__)
+my_list = [
+    ('apple', 23),
+    ('banana', 80),
+    ('cherry', 13),
+    ('date', 10),
+    ('elderberry', 4),
+    ('fig', 65),
+    ('grape', 5),
+    ('honeydew', 7),
+    ('kiwi', 1),
+    ('lemon', 10),
+]
 
-car1 = Car()
-getattr(car1, 'drive')()
-getattr(Car, 'drive')
 
-
+#[setattr(Empty, *attr) for attr in my_list]
+# for i in range(len(my_list)):
+#     a = my_list[i][0]
+#     b = my_list[i][1]
+#     setattr(Empty, a, b)
+for attr, val in my_list:
+    setattr(Empty, attr, val)
+print(Empty.__dict__)
